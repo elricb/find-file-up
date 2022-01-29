@@ -2,6 +2,10 @@
 
 Steps up one directory at a time searching for a file.  Stops at user home directory or top of path tree.  I made this to help with the [dotenv package](https://github.com/motdotla/dotenv); see `dotenv Usage` for usage.
 
+## Requirements
+
+* [node](https://nodejs.org/en/download/) - recommended lts version >= 12
+
 ## Install
 
 ```
@@ -34,18 +38,24 @@ require("dotenv").config({ path: findFileUp(__dirname, ".env") || undefined });
 findFileUp(baseDirectory, file);
 ```
 
-## Function Arguments
+### Function Arguments
 
-### baseDirectory
+#### baseDirectory
 
 Type: `string`
 
 Start search from this directory.
 
-### file
+#### file
 
 Type: `string`
 
 Search for this file.
+
+### Return Value
+
+Type: `string` | `boolean`
+
+The directory containing the first instance of file or `false`.
 
 
