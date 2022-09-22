@@ -1,29 +1,30 @@
+import process from "process";
 import {existsSync} from "fs";
 import path from "path";
 
-const findFileUp = function (baseDirectory, file) {
+function findFileUp(baseDirectory, file) {
   const trailSep = /[\\/]$/;
+  let seek = true;
   let directory = baseDirectory;
 
-  while (true) {
+  while (seek) {
     if (!existsSync(directory)) {
-      directory = false;
-      break;
+      seek = false;
     } else if (existsSync(path.join(directory, file))) {
       directory = path.join(directory, file);
-      break;
+      seek = false;
     } else if ((process.env.HOME || process.env.USERPROFILE) === directory) {
-      directory = false;
-      break;
+      seek = false;
     } else if (path.parse(directory).root === directory) {
-      directory = false;
-      break;
+      seek = false;
     } else {
-      directory = path.normalize(path.join(directory, "..")).replace(trailSep, '');
+      directory = path
+        .normalize(path.join(directory, ".."))
+        .replace(trailSep, "");
     }
   }
 
   return directory;
-};
+}
 
 export default findFileUp;

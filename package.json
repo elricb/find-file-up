@@ -16,7 +16,9 @@
   },
   "scripts": {
     "watch": "parcel watch",
-    "build": "parcel build"
+    "build": "parcel build",
+    "lint": "xo",
+    "release": "npm run lint && npm run build"
   },
   "keywords": [
     "directory",
@@ -24,6 +26,9 @@
     "up"
   ],
   "devDependencies": {
-    "parcel": "^2.2.1"
+    "@elricb/prettier-config": "^0.0.1",
+    "@elricb/xo-config": "^0.1.0",
+    "parcel": "^2.2.1",
+    "xo": "^0.52.3"
   }
 }

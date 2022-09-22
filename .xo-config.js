@@ -1,1 +1,1 @@
-module.exports = require("@elricb/xo-config");
+module.exports = require("@elricb/xo-config")(["node"]);
