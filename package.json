@@ -1,6 +1,6 @@
 {
   "name": "@elricb/find-file-up",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Steps up directories until file is found.",
   "license": "MIT",
   "author": "elricb (https://github.com/elricb)",
