@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Steps up directories until file is found.",
   "license": "MIT",
-  "author": "elricb (github.com/elricb)",
+  "author": "elricb (https://github.com/elricb)",
   "homepage": "https://github.com/elricb/find-file-up#readme",
   "repository": {
     "type": "git",
@@ -17,11 +17,12 @@
   "module": "lib/esm/index.js",
   "scripts": {
     "lint": "xo",
+    "test": "exit 0",
     "docs": "npx typedoc --out ./docs ./src/index.ts",
     "build-cjs": "./node_modules/typescript/bin/tsc --project ./tsconfig.json --outDir ./lib/cjs --importHelpers",
     "build-esm": "./node_modules/typescript/bin/tsc --project ./tsconfig-esm.json --outDir ./lib/esm --importHelpers",
     "build": "rm -rf ./lib && npm run build-esm && npm run build-cjs",
-    "release": "npm run lint && npm run docs && npm run build"
+    "release": "npm run lint && npm test && npm run docs && npm run build"
   },
   "keywords": [
     "directory",
