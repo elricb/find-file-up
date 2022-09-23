@@ -54,8 +54,8 @@ Search for this file.
 
 ### Return Value
 
-Type: `string` | `boolean`
+Type: `string`
 
-The directory containing the first instance of file or `false`.
+The directory containing the first instance of file or a blank string.
 
 

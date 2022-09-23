@@ -4,31 +4,38 @@
   "description": "Steps up directories until file is found.",
   "license": "MIT",
   "author": "elricb (github.com/elricb)",
+  "homepage": "https://github.com/elricb/find-file-up#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elricb/find-file-up.git"
   },
-  "source": "src/index.js",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "engines": {
-    "node": ">= 12"
+  "bugs": {
+    "url": "https://github.com/elricb/find-file-up/issues"
   },
+  "source": "src/index.ts",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
   "scripts": {
-    "watch": "parcel watch",
-    "build": "parcel build",
     "lint": "xo",
-    "release": "npm run lint && npm run build"
+    "docs": "npx typedoc --out ./docs ./src/index.ts",
+    "build-cjs": "./node_modules/typescript/bin/tsc --project ./tsconfig.json --outDir ./lib/cjs --importHelpers",
+    "build-esm": "./node_modules/typescript/bin/tsc --project ./tsconfig-esm.json --outDir ./lib/esm --importHelpers",
+    "build": "rm -rf ./lib && npm run build-esm && npm run build-cjs",
+    "release": "npm run lint && npm run docs && npm run build"
   },
   "keywords": [
     "directory",
     "search",
     "up"
   ],
+  "engines": {
+    "node": ">= 12"
+  },
   "devDependencies": {
     "@elricb/prettier-config": "^0.0.1",
     "@elricb/xo-config": "^0.1.0",
-    "parcel": "^2.2.1",
+    "typedoc": "^0.23.15",
+    "typescript": "^4.7.4",
     "xo": "^0.52.3"
   }
 }
