@@ -32,30 +32,15 @@ import findFileUp from "@elricb/find-file-up";
 require("dotenv").config({ path: findFileUp(__dirname, ".env") || undefined });
 ```
 
-## Syntax
+## Documentation
 
-```
-findFileUp(baseDirectory, file);
-```
+### Release Notes
 
-### Function Arguments
+View commit tag for release notes.
 
-#### baseDirectory
+* [release list](https://github.com/elricb/find-file-up/tags)
 
-Type: `string`
+### API
 
-Start search from this directory.
-
-#### file
-
-Type: `string`
-
-Search for this file.
-
-### Return Value
-
-Type: `string`
-
-The directory containing the first instance of file or a blank string.
-
+See `./docs/index.html`.
 
