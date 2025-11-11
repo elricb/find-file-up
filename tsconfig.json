@@ -2,10 +2,6 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./lib",
-    "target": "es2022",
-    "lib": ["es2022"],
-    "module": "commonjs",
-    "moduleResolution": "node",
     "sourceMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
